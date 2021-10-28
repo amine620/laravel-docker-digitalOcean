@@ -66,13 +66,13 @@ services:
 
 
 
-    # npm:
-    #     image: node:13.7
-    #     container_name: npm
-    #     volumes:
-    #         - ./src:/var/www/html
-    #     working_dir: /var/www/html
-    #     entrypoint: ['npm']
+    npm:
+        image: node:13.7
+        container_name: npm
+        volumes:
+            - ./src:/var/www/html
+        working_dir: /var/www/html
+        entrypoint: ['npm']
 
 
     artisan:
