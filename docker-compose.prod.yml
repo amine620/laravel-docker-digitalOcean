@@ -42,9 +42,9 @@ services:
         
 
     php:
-        build:
-          context: .
-          dockerfile: Dockerfile
+        build: .
+          # context: .
+          # dockerfile: Dockerfile
         container_name: php
         volumes:
           - ./src:/var/www/html
