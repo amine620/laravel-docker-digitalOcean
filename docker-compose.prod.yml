@@ -41,17 +41,17 @@ services:
             - laravel
         
 
-    # php:
-    #     build:
-    #       context: .
-    #       dockerfile: Dockerfile
-    #     container_name: php
-    #     volumes:
-    #       - ./src:/var/www/html
-    #     ports:
-    #       - "9000:9000"
-    #     networks:
-    #       - laravel
+    php:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        container_name: php
+        volumes:
+          - ./src:/var/www/html
+        ports:
+          - "9000:9000"
+        networks:
+          - laravel
 
 
     # composer:
