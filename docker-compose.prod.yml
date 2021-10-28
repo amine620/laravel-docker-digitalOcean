@@ -41,51 +41,51 @@ services:
             - laravel
         
 
-    php:
-        build:
-          context: .
-          dockerfile: Dockerfile
-        container_name: php
-        volumes:
-          - ./src:/var/www/html
-        ports:
-          - "9000:9000"
-        networks:
-          - laravel
+    # php:
+    #     build:
+    #       context: .
+    #       dockerfile: Dockerfile
+    #     container_name: php
+    #     volumes:
+    #       - ./src:/var/www/html
+    #     ports:
+    #       - "9000:9000"
+    #     networks:
+    #       - laravel
 
 
-    composer:
-        image: composer:latest
-        container_name: composer
-        volumes:
-            - ./src:/var/www/html
-        working_dir: /var/www/html
-        depends_on:
-            - php
-        networks:
-            - laravel
+    # composer:
+    #     image: composer:latest
+    #     container_name: composer
+    #     volumes:
+    #         - ./src:/var/www/html
+    #     working_dir: /var/www/html
+    #     depends_on:
+    #         - php
+    #     networks:
+    #         - laravel
 
 
 
-    npm:
-        image: node:13.7
-        container_name: npm
-        volumes:
-            - ./src:/var/www/html
-        working_dir: /var/www/html
-        entrypoint: ['npm']
+    # npm:
+    #     image: node:13.7
+    #     container_name: npm
+    #     volumes:
+    #         - ./src:/var/www/html
+    #     working_dir: /var/www/html
+    #     entrypoint: ['npm']
 
 
-    artisan:
-        build:
-          context: .
-          dockerfile: Dockerfile
-        container_name: artisan
-        volumes:
-          - ./src:/var/www/html
-        depends_on:
-          - mysql
-        working_dir: /var/www/html
-        entrypoint: ['php', '/var/www/html/artisan']
-        networks:
-          - laravel
+    # artisan:
+    #     build:
+    #       context: .
+    #       dockerfile: Dockerfile
+    #     container_name: artisan
+    #     volumes:
+    #       - ./src:/var/www/html
+    #     depends_on:
+    #       - mysql
+    #     working_dir: /var/www/html
+    #     entrypoint: ['php', '/var/www/html/artisan']
+    #     networks:
+    #       - laravel
