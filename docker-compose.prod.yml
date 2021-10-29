@@ -33,7 +33,7 @@ services:
             MYSQL_PASSWORD: 12345
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
         volumes:
-            - ./mysql:/var/lib/mysql
+            - :/var/lib/mysql
 
         
         networks:
